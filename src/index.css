@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 140 20% 97%;
+    --foreground: 160 30% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 160 30% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 160 30% 10%;
+
+    --primary: 152 55% 28%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 38 70% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 140 15% 93%;
+    --muted-foreground: 160 10% 45%;
+
+    --accent: 200 60% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 140 15% 88%;
+    --input: 140 15% 88%;
+    --ring: 152 55% 28%;
+
+    --radius: 0.625rem;
+
+    --sidebar-background: 152 45% 18%;
+    --sidebar-foreground: 140 20% 95%;
+    --sidebar-primary: 38 70% 50%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 152 40% 24%;
+    --sidebar-accent-foreground: 140 20% 95%;
+    --sidebar-border: 152 35% 25%;
+    --sidebar-ring: 38 70% 50%;
+
+    --success: 152 60% 40%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 90% 55%;
+    --warning-foreground: 38 90% 15%;
+    --info: 200 60% 45%;
+    --info-foreground: 0 0% 100%;
+
+    --chart-green: 152 55% 38%;
+    --chart-orange: 28 80% 52%;
+    --chart-blue: 210 65% 50%;
+    --chart-red: 0 65% 55%;
+    --chart-purple: 270 50% 55%;
+    --chart-teal: 180 50% 40%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(152, 55%, 28%), hsl(152, 45%, 18%));
+    --gradient-accent: linear-gradient(135deg, hsl(38, 70%, 50%), hsl(28, 80%, 52%));
+    --gradient-card: linear-gradient(180deg, hsl(0, 0%, 100%), hsl(140, 20%, 97%));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  .font-telugu {
+    font-family: 'Noto Sans Telugu', sans-serif;
+  }
+}
+
+@layer components {
+  .kpi-card {
+    @apply bg-card rounded-xl border p-5 shadow-sm hover:shadow-md transition-shadow;
+  }
+  .dashboard-chart {
+    @apply bg-card rounded-xl border p-5 shadow-sm;
+  }
+  .alert-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .alert-badge-high {
+    @apply alert-badge bg-destructive/10 text-destructive;
+  }
+  .alert-badge-medium {
+    @apply alert-badge bg-warning/10 text-orange-700;
+  }
+  .alert-badge-low {
+    @apply alert-badge bg-success/10 text-green-700;
+  }
+  .stat-up {
+    @apply text-green-600;
+  }
+  .stat-down {
+    @apply text-destructive;
+  }
+  .page-header {
+    @apply text-2xl font-bold text-foreground mb-1;
+  }
+  .page-subtitle {
+    @apply text-muted-foreground text-sm mb-6;
+  }
+}
