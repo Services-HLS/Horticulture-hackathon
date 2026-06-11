@@ -2,6 +2,14 @@
   "routes": [
     { "handle": "filesystem" },
     {
+      "src": "/predictions-api/(.*)",
+      "dest": "/api/predictions-api?path=$1"
+    },
+    {
+      "src": "/predictions-api",
+      "dest": "/api/predictions-api"
+    },
+    {
       "src": "/predictions-app/(.*)",
       "dest": "/api/predictions-proxy?path=$1"
     },
