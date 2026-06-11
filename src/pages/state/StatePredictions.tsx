@@ -2,8 +2,8 @@ import { BarChart3, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const PREDICTIONS_URL = "http://horticulture-hackathon.s3-website.ap-south-1.amazonaws.com/";
-/** Same-origin proxy on Vercel/dev server so the iframe works over HTTPS */
-const PREDICTIONS_IFRAME_SRC = "/predictions-app/";
+/** Proxied on Vercel so assets load under /predictions-app/ and avoid mixed-content blocking */
+const PREDICTIONS_IFRAME_SRC = import.meta.env.PROD ? "/predictions-app/" : PREDICTIONS_URL;
 
 const StatePredictions = () => {
   return (

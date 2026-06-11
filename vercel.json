@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/predictions-app",
-      "destination": "http://horticulture-hackathon.s3-website.ap-south-1.amazonaws.com/"
+      "destination": "/api/predictions-app"
     },
     {
       "source": "/predictions-app/:path*",
-      "destination": "http://horticulture-hackathon.s3-website.ap-south-1.amazonaws.com/:path*"
+      "destination": "/api/predictions-app/:path*"
     },
     {
       "source": "/(.*)",
