@@ -11,6 +11,13 @@ export default defineConfig(({ mode }) => ({
     hmr: {
       overlay: false,
     },
+    proxy: {
+      "/predictions-app": {
+        target: "http://horticulture-hackathon.s3-website.ap-south-1.amazonaws.com",
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/predictions-app\/?/, "/"),
+      },
+    },
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {

@@ -2,6 +2,8 @@ import { BarChart3, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const PREDICTIONS_URL = "http://horticulture-hackathon.s3-website.ap-south-1.amazonaws.com/";
+/** Same-origin proxy on Vercel/dev server so the iframe works over HTTPS */
+const PREDICTIONS_IFRAME_SRC = "/predictions-app/";
 
 const StatePredictions = () => {
   return (
@@ -44,7 +46,7 @@ const StatePredictions = () => {
         </div>
 
         <iframe
-          src={PREDICTIONS_URL}
+          src={PREDICTIONS_IFRAME_SRC}
           className="flex-1 w-full border-0 relative z-10"
           title="AP Horticulture Intelligence Platform - Predictions"
           allowFullScreen

@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/predictions-app",
+      "destination": "http://horticulture-hackathon.s3-website.ap-south-1.amazonaws.com/"
+    },
+    {
+      "source": "/predictions-app/:path*",
+      "destination": "http://horticulture-hackathon.s3-website.ap-south-1.amazonaws.com/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
