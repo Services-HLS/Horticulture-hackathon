@@ -15,21 +15,6 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showCredentials, setShowCredentials] = useState(false);
   
-  // Silent session clear on mount
-  useState(() => {
-    const logoutUrls = [
-      "https://harticulture-ai-agent.vercel.app/api/auth/signout",
-      "https://harticulture-ai-agent.vercel.app/logout"
-    ];
-    logoutUrls.forEach(url => {
-      const iframe = document.createElement('iframe');
-      iframe.src = url;
-      iframe.style.display = 'none';
-      document.body.appendChild(iframe);
-      setTimeout(() => document.body.contains(iframe) && document.body.removeChild(iframe), 3000);
-    });
-  });
-
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);

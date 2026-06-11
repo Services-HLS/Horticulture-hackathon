@@ -1,6 +1,6 @@
 import type { UserRole } from "@/contexts/AuthContext";
 
-export const AI_ASSISTANT_URL = "https://harticulture-ai-agent.vercel.app/";
+export const AI_ASSISTANT_URL = "https://horticulture-assistant-1050219781430.asia-south1.run.app/";
 
 /** In-app route; embedded agent loads here inside `AppLayout`. */
 export const AI_ASSISTANT_ROUTE = "/assistant";

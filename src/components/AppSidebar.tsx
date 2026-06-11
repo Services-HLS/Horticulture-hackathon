@@ -14,6 +14,7 @@ import { AI_ASSISTANT_ROUTE, getAiAssistantNavLabel } from "@/lib/aiAssistant";
 
 const stateNav = [
   { title: "State Dashboard", url: "/state", icon: LayoutDashboard },
+  { title: "Predictions", url: "/state/predictions", icon: BarChart3 },
   { title: "District Intelligence", url: "/state/districts", icon: MapPin },
   { title: "Crop Prices", url: "/state/prices", icon: TrendingUp },
   { title: "Demand Alerts", url: "/state/alerts", icon: AlertTriangle },

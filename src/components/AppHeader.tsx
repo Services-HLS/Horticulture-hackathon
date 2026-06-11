@@ -49,37 +49,8 @@ const AppHeader = () => {
           variant="ghost"
           size="icon"
           onClick={() => {
-            toast.info("Logging out from all services...");
-            
-            const logoutUrls = [
-              "https://harticulture-ai-agent.vercel.app/api/auth/signout",
-              "https://harticulture-ai-agent.vercel.app/logout",
-              "https://harticulture-ai-agent.vercel.app/api/auth/signout?callbackUrl=" + encodeURIComponent(window.location.origin)
-            ];
-            
-            logoutUrls.forEach(url => {
-              // Try Image ping
-              const img = new Image();
-              img.src = url;
-              
-              // Try hidden iframe
-              const iframe = document.createElement('iframe');
-              iframe.src = url;
-              iframe.style.display = 'none';
-              document.body.appendChild(iframe);
-              
-              // Try no-cors fetch
-              fetch(url, { mode: 'no-cors' }).catch(() => {});
-              
-              setTimeout(() => {
-                if (document.body.contains(iframe)) {
-                  document.body.removeChild(iframe);
-                }
-              }, 3000);
-            });
-
-            // Final logout after 1 second to allow pings to start
-            setTimeout(logout, 1500);
+            toast.info("Logging out...");
+            logout();
           }}
           title="Logout"
         >

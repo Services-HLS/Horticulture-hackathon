@@ -13,6 +13,7 @@ import NotFound from "./pages/NotFound";
 
 // State pages
 import StateDashboard from "./pages/state/StateDashboard";
+import StatePredictions from "./pages/state/StatePredictions";
 import DistrictIntelligence from "./pages/state/DistrictIntelligence";
 import StateCropPrices from "./pages/state/StateCropPrices";
 import StateAlerts from "./pages/state/StateAlerts";
@@ -60,6 +61,7 @@ const AuthenticatedApp = () => {
       {/* State routes */}
       <Route element={<AppLayout />}>
         <Route path="/state" element={<StateDashboard />} />
+        <Route path="/state/predictions" element={<StatePredictions />} />
         <Route path="/state/districts" element={<DistrictIntelligence />} />
         <Route path="/state/prices" element={<StateCropPrices />} />
         <Route path="/state/alerts" element={<StateAlerts />} />

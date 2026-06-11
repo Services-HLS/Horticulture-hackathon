@@ -16,7 +16,7 @@ const AiAssistantPage = () => {
           <Button 
             variant="outline" 
             size="sm"
-            onClick={() => window.open("https://harticulture-ai-agent.vercel.app/", "_blank")}
+            onClick={() => window.open(AI_ASSISTANT_URL, "_blank")}
             className="text-xs font-bold"
           >
             Open in New Window
@@ -33,7 +33,7 @@ const AiAssistantPage = () => {
 
         <iframe
           key={user?.name}
-          src="https://harticulture-ai-agent.vercel.app/"
+          src={AI_ASSISTANT_URL}
           title={title}
           className="relative z-10 h-full w-full border-0 bg-transparent"
           allow="microphone; camera; clipboard-write; geolocation"
