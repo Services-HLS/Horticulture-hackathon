@@ -1,16 +1,17 @@
 {
-  "rewrites": [
+  "routes": [
+    { "handle": "filesystem" },
     {
-      "source": "/predictions-app",
-      "destination": "/api/predictions-app"
+      "src": "/predictions-app/(.*)",
+      "dest": "/api/predictions-proxy?path=$1"
     },
     {
-      "source": "/predictions-app/:path*",
-      "destination": "/api/predictions-app/:path*"
+      "src": "/predictions-app",
+      "dest": "/api/predictions-proxy"
     },
     {
-      "source": "/(.*)",
-      "destination": "/index.html"
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }

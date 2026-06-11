@@ -7,10 +7,10 @@ function rewriteHtml(html) {
 }
 
 export default async function handler(req, res) {
-  const pathSegments = req.query.path;
-  const relativePath = Array.isArray(pathSegments)
-    ? pathSegments.join("/")
-    : pathSegments || "";
+  const pathParam = req.query.path;
+  const relativePath = Array.isArray(pathParam)
+    ? pathParam.join("/")
+    : pathParam || "";
 
   const s3Path = relativePath ? `/${relativePath}` : "/";
   const targetUrl = `${S3_ORIGIN}${s3Path}`;
